@@ -7,3 +7,6 @@
 [submodule "lib/hardhat"]
 	path = lib/hardhat
 	url = https://github.com/nomiclabs/hardhat
+[submodule "lib/hevm"]
+	path = lib/hevm
+	url = https://github.com/alephao/hevm
