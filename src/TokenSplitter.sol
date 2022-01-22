@@ -93,7 +93,6 @@ contract Splitter is Context, Pausable {
 
         token = _paymentToken;
         owner = payable(msg.sender);
-        start = block.timestamp;
 
         _pause();
         //fund contract with DAI & call initialize() to open contract
@@ -135,9 +134,13 @@ contract Splitter is Context, Pausable {
             uint256 overage = _contractBalance - totalShares();
             SafeERC20.safeTransfer(token, owner, overage);
             _unpause();
+            start = block.timestamp;
+
         } else {
             initialized = true;
             _unpause(); //_contractBalance == totalShares()
+            start = block.timestamp;
+
         }
     }
 
