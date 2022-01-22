@@ -11,7 +11,7 @@ TokenSplitter is Sone's payment distribution contract.  It allows artist's to wi
 TokenSplitter is a modification of [PaymentSplitter](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/finance/PaymentSplitter.sol) from OpenZeppelin.  It removes the logic/events for splitting ETH and extends the contract with a TIMELOCK that allows Owner to sweep ERC20 tokens after expiration.
 
 
-### There are 3 new functions: initializer(), sweepEth(), & sweepTokensAndPause()
+### There are 3 new functions: `initializer(), sweepEth(), & sweepTokensAndPause()`
 
 
 `initializer()` - MUST be called to unpause contract and open up withdrawals.  Before unpausing the contract, initializer() requires the balance of stablecoin and the amount of shares owed to be strictly equal.
